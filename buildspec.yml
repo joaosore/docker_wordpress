@@ -14,7 +14,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build --build-arg NODE_ENV=${NODE_ENV} --build-arg POSTGRES_HOST=${POSTGRES_HOST} --build-arg POSTGRES_PORT=${POSTGRES_PORT} --build-arg POSTGRES_USER=${POSTGRES_USER} --build-arg POSTGRES_PASSWORD=${POSTGRES_PASSWORD} --build-arg POSTGRES_DATABASE=${POSTGRES_DATABASE} -t 088900854650.dkr.ecr.us-east-1.amazonaws.com/wp:latest .
+      - docker build --build-arg TZ=${TZ} --build-arg WORDPRESS_DB_HOST=${WORDPRESS_DB_HOST} --build-arg WORDPRESS_DB_NAME=${WORDPRESS_DB_NAME} --build-arg WORDPRESS_DB_USER=${WORDPRESS_DB_USER} --build-arg WORDPRESS_DB_PASSWORD=${WORDPRESS_DB_PASSWORD} -t 088900854650.dkr.ecr.us-east-1.amazonaws.com/wp:latest .
       - docker tag 088900854650.dkr.ecr.us-east-1.amazonaws.com/wp:latest 088900854650.dkr.ecr.us-east-1.amazonaws.com/wp:latest
   post_build:
     commands:
